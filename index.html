@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Kuyavan | Premium Art & Custom 3D Printing Studio</title>
+  <meta name="description" content="Digital Kuyavan is a boutique 3D printing studio blending traditional sculpting aesthetics with cutting-edge additive manufacturing. Explore our art showcase and request custom prints.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- SVG Gradient definitions -->
+  <svg style="width:0;height:0;position:absolute;" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="hsl(263, 90%, 64%)" />
+        <stop offset="100%" stop-color="hsl(180, 100%, 48%)" />
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <!-- --- FLOATING HEADER --- -->
+  <header id="main-header">
+    <div class="container nav-container">
+      <a href="#home" class="logo" id="logo-link">
+        <svg viewBox="0 0 32 32">
+          <!-- Geometric 3D Print Nozzle & Pottery Shape -->
+          <path d="M16 2 L28 10 L28 22 L16 30 L4 22 L4 10 Z" fill="none" stroke="url(#logoGradient)" stroke-width="2" />
+          <path d="M16 8 L22 12 L22 20 L16 24 L10 20 L10 12 Z" fill="none" stroke="url(#logoGradient)" stroke-width="1.5" />
+          <circle cx="16" cy="16" r="3" fill="url(#logoGradient)" />
+        </svg>
+        Digital Kuyavan
+      </a>
+      
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#showcase">Showcase</a></li>
+        <li><a href="#customizer">3D Configurator</a></li>
+        <li><a href="#process">Our Process</a></li>
+        <li><a href="#contact">Enquiry</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- --- HERO SECTION --- -->
+  <section id="home" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-tag">
+          <span></span> Online Studio Open
+        </div>
+        <h1 class="hero-title">Sculpting the Future,<br><span>Layer by Layer.</span></h1>
+        <p class="hero-desc">We combine the ancient spirit of clay craftsmanship with state-of-the-art 3D printing technology. Discover bespoke digital sculptures, intricate miniatures, and custom aesthetic designs.</p>
+        <div class="hero-actions">
+          <a href="#showcase" class="btn btn-primary">Explore Showcase</a>
+          <a href="#customizer" class="btn btn-secondary">Configure Print</a>
+        </div>
+      </div>
+      
+      <div class="hero-visual">
+        <!-- Floating badge 1 -->
+        <div class="floating-badge fb-1 glass-panel">
+          <div class="floating-badge-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+          </div>
+          <div class="floating-badge-text">
+            <h4>Ultra Fine Detail</h4>
+            <p>Down to 20 microns</p>
+          </div>
+        </div>
+
+        <!-- Hero center card -->
+        <div class="hero-main-card glass-panel" id="hero-showcase-card">
+          <div class="hero-img-wrapper">
+            <img src="assets/lamp.png" alt=" Voronoi hollow architectural lamp">
+          </div>
+          <div class="hero-card-info">
+            <h3 class="hero-card-title">Aether Voronoi Lamp</h3>
+            <div class="hero-card-meta">
+              <span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+                PLA Wood Fill
+              </span>
+              <span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                14.5 Hours
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating badge 2 -->
+        <div class="floating-badge fb-2 glass-panel">
+          <div class="floating-badge-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-violet)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </div>
+          <div class="floating-badge-text">
+            <h4>Industrial Resins</h4>
+            <p>High impact & durability</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- STATS SECTION --- -->
+  <section class="stats container">
+    <div class="glass-panel stats-grid">
+      <div class="stat-item">
+        <div class="stat-number" id="stat-printers">12+</div>
+        <div class="stat-label">Printers Active</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" id="stat-resolution">20μm</div>
+        <div class="stat-label">Min Layer Height</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" id="stat-materials">18+</div>
+        <div class="stat-label">Material Options</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" id="stat-prints">4.8k+</div>
+        <div class="stat-label">Art Pieces Printed</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- SHOWCASE / GALLERY SECTION --- -->
+  <section id="showcase" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Artistic Showcase</h2>
+        <p class="section-subtitle">Browse through our physical collection of additive creations, capturing miniature figurines, fine home decor, and intricate kinetic structures.</p>
+      </div>
+
+      <div class="gallery-filters">
+        <button class="filter-btn active" data-filter="all">All Sculptures</button>
+        <button class="filter-btn" data-filter="miniature">Miniatures</button>
+        <button class="filter-btn" data-filter="decor">Decor & Art</button>
+        <button class="filter-btn" data-filter="functional">Functional</button>
+      </div>
+
+      <div class="gallery-grid" id="gallery-grid">
+        <!-- Cards will be dynamically rendered by app.js. Included placeholders for SEO -->
+        <div class="gallery-card" data-category="decor" data-id="1">
+          <div class="card-img-container">
+            <img src="assets/lamp.png" alt="Aether Voronoi Lamp">
+            <span class="card-tag">Decor & Art</span>
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Aether Voronoi Lamp</h3>
+            <p class="card-description">An intricate hollow-body lamp utilizing customized cellular patterns to scatter light in geometric grids.</p>
+            <div class="card-meta">
+              <span>PLA Wood Fill</span>
+              <span>14h 30m</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-card" data-category="miniature" data-id="2">
+          <div class="card-img-container">
+            <img src="assets/dragon.png" alt="Translucent Wyvern Mini">
+            <span class="card-tag">Miniatures</span>
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Emerald Dragon Wyvern</h3>
+            <p class="card-description">High-fidelity miniature printed in ultra-detail green resin. Showcases fine organic scales and micro-supports.</p>
+            <div class="card-meta">
+              <span>SLA Clear Resin</span>
+              <span>6h 15m</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-card" data-category="decor" data-id="3">
+          <div class="card-img-container">
+            <img src="assets/sculpture.png" alt="Organic Face Vase">
+            <span class="card-tag">Decor & Art</span>
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Biomorphic Face Sculpture</h3>
+            <p class="card-description">Abstract human facial structure meeting geometric curves, finished in matte stone PLA with gold inlay.</p>
+            <div class="card-meta">
+              <span>Stone PLA / Enamel</span>
+              <span>18h 45m</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-card" data-category="functional" data-id="4">
+          <div class="card-img-container">
+            <img src="assets/gears.png" alt="Kinetic Gearbox">
+            <span class="card-tag">Functional</span>
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Helical Planar Gearbox</h3>
+            <p class="card-description">Interlocking planetary gear assembly printed in high-toughness metallic PLA. Smooth rotation, zero assembly.</p>
+            <div class="card-meta">
+              <span>Tough Copper PLA</span>
+              <span>11h 20m</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- 3D CONFIGURATOR / ESTIMATOR --- -->
+  <section id="customizer" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Interactive 3D Configurator</h2>
+        <p class="section-subtitle">Simulate print materials, scaling factors, and infill parameters to visualize a virtual print bed and calculate live production estimates.</p>
+      </div>
+
+      <div class="glass-panel customizer-grid">
+        <!-- Visualizer view -->
+        <div class="visualizer-preview" id="visualizer-preview">
+          <div class="preview-status">
+            <span class="pulse-dot"></span> Virtual Printer Bed Active
+          </div>
+          
+          <div class="printer-bed-space">
+            <!-- Simulated nozzle bar -->
+            <div class="nozzle-gantry"></div>
+            
+            <!-- Simulated print bed -->
+            <div class="printer-bed" id="printer-bed">
+              <!-- Simulated 3D Model layers inside bed space -->
+              <div class="virtual-model model-vase" id="virtual-model">
+                <!-- Layers dynamically created / adjusted via class -->
+                <div class="cylinder-layer layer-1"></div>
+                <div class="cylinder-layer layer-2"></div>
+                <div class="cylinder-layer layer-3"></div>
+                <div class="cylinder-layer layer-4"></div>
+                <div class="cylinder-layer layer-5"></div>
+                <div class="cylinder-layer layer-6"></div>
+                <div class="cylinder-layer layer-7"></div>
+                <div class="cylinder-layer layer-8"></div>
+                <div class="cylinder-layer layer-9"></div>
+                <div class="cylinder-layer layer-10"></div>
+                <div class="cylinder-layer layer-11"></div>
+                <div class="cylinder-layer layer-12"></div>
+                <div class="cylinder-layer layer-13"></div>
+                <div class="cylinder-layer layer-14"></div>
+                <div class="cylinder-layer layer-15"></div>
+                <div class="cylinder-layer layer-16"></div>
+                <div class="cylinder-layer layer-17"></div>
+                <div class="cylinder-layer layer-18"></div>
+                <div class="cylinder-layer layer-19"></div>
+                <div class="cylinder-layer layer-20"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Controls view -->
+        <div class="configurator-controls">
+          <div class="config-group">
+            <label class="config-label">1. Select Model</label>
+            <div class="option-grid">
+              <button class="option-btn active" data-model="vase">
+                <h4>Vase</h4>
+                <p>Spiral Poly</p>
+              </button>
+              <button class="option-btn" data-model="prism">
+                <h4>Prism</h4>
+                <p>Geometric</p>
+              </button>
+              <button class="option-btn" data-model="gear">
+                <h4>Gear</h4>
+                <p>Helical gear</p>
+              </button>
+            </div>
+          </div>
+
+          <div class="config-group">
+            <label class="config-label">2. Select Material</label>
+            <div class="option-grid">
+              <button class="option-btn active" data-material="pla">
+                <h4>Matte PLA</h4>
+                <p>Plant-based</p>
+              </button>
+              <button class="option-btn" data-material="abs">
+                <h4>Tough ABS</h4>
+                <p>High-Strength</p>
+              </button>
+              <button class="option-btn" data-material="resin">
+                <h4>HD Resin</h4>
+                <p>Extreme Details</p>
+              </button>
+            </div>
+          </div>
+
+          <div class="config-group">
+            <label class="config-label">3. Select Color</label>
+            <div class="color-swatches">
+              <div class="color-swatch active" style="background-color: hsl(180, 100%, 48%); --swatch-color: hsl(180, 100%, 48%);" data-color="hsl(180, 100%, 48%)" title="Teal Glow"></div>
+              <div class="color-swatch" style="background-color: hsl(263, 90%, 64%); --swatch-color: hsl(263, 90%, 64%);" data-color="hsl(263, 90%, 64%)" title="Neon Violet"></div>
+              <div class="color-swatch" style="background-color: hsl(38, 95%, 55%); --swatch-color: hsl(38, 95%, 55%);" data-color="hsl(38, 95%, 55%)" title="Silk Gold"></div>
+              <div class="color-swatch" style="background-color: hsl(350, 85%, 55%); --swatch-color: hsl(350, 85%, 55%);" data-color="hsl(350, 85%, 55%)" title="Crimson Red"></div>
+              <div class="color-swatch" style="background-color: hsl(0, 0%, 90%); --swatch-color: hsl(0, 0%, 90%);" data-color="hsl(0, 0%, 90%)" title="Glacier White"></div>
+            </div>
+          </div>
+
+          <div class="config-group">
+            <div class="config-label">
+              <span>4. Scale Factor</span>
+              <span class="value-bubble" id="scale-value">100%</span>
+            </div>
+            <input type="range" id="input-scale" min="50" max="200" value="100" step="5">
+          </div>
+
+          <div class="config-group">
+            <div class="config-label">
+              <span>5. Infill Density</span>
+              <span class="value-bubble" id="infill-value">20%</span>
+            </div>
+            <input type="range" id="input-infill" min="10" max="100" value="20" step="5">
+          </div>
+
+          <!-- Estimates Panel -->
+          <div class="estimates-panel">
+            <div class="est-item">
+              <div class="est-val" id="est-time">14.5 hrs</div>
+              <div class="est-label">Est. Time</div>
+            </div>
+            <div class="est-item">
+              <div class="est-val" id="est-weight">168 g</div>
+              <div class="est-label">Est. Weight</div>
+            </div>
+            <div class="est-item">
+              <div class="est-val cost-val" id="est-cost">$24.50</div>
+              <div class="est-label">Est. Cost</div>
+            </div>
+          </div>
+
+          <div style="margin-top: 10px;">
+            <button class="btn btn-primary" style="width: 100%;" id="btn-inquire-custom">Enquire About This Configuration</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- THE PROCESS SECTION --- -->
+  <section id="process" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">The Slicing Process</h2>
+        <p class="section-subtitle">How we transform your digital wireframes and ideas into physical, high-resolution masterpieces.</p>
+      </div>
+
+      <div class="process-timeline">
+        <div class="timeline-item">
+          <div class="timeline-badge">01</div>
+          <div class="glass-panel timeline-content">
+            <h3 class="timeline-title">1. Design & Sculpt</h3>
+            <p class="timeline-desc">You share an STL/OBJ file or describe an idea. We evaluate model geometries, overhangs, and printability, making manual optimizations for the physical medium.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-badge">02</div>
+          <div class="glass-panel timeline-content">
+            <h3 class="timeline-title">2. Material & Slice</h3>
+            <p class="timeline-desc">We select the ideal printing method (FDM filament, SLA liquid resin, or SLS powder) and slice it into thousands of horizontal instruction layers using custom profiles.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-badge">03</div>
+          <div class="glass-panel timeline-content">
+            <h3 class="timeline-title">3. Layered Manufacture</h3>
+            <p class="timeline-desc">The sliced layers are sent to our calibrated printer array. Models build slowly over hours, fusing resins or melting polymers with precision down to 0.02mm.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-badge">04</div>
+          <div class="glass-panel timeline-content">
+            <h3 class="timeline-title">4. Post-processing</h3>
+            <p class="timeline-desc">Completed prints are washed in alcohol, UV-cured, and hand-finished. We remove support lattices, sand lines, and apply protective paints or gold coatings.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- CONTACT / ENQUIRY FORM --- -->
+  <section id="contact" class="section">
+    <div class="container contact-grid">
+      <div class="contact-info">
+        <div>
+          <h2 class="section-title" style="text-align: left; margin-bottom: 20px;">Submit an Enquiry</h2>
+          <p style="color: var(--text-secondary); margin-bottom: 40px; font-size: 1.1rem; line-height: 1.6;">
+            Have a custom model you want printed? Or want to purchase a custom edition of an item in our gallery? Fill out the details below. We reply with time & cost quotes within 24 hours.
+          </p>
+          
+          <div class="contact-details">
+            <div class="contact-detail-item">
+              <div class="contact-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </div>
+              <div class="contact-text">
+                <h4>Email Us</h4>
+                <p>hello@digitalkuyavan.art</p>
+              </div>
+            </div>
+
+            <div class="contact-detail-item">
+              <div class="contact-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </div>
+              <div class="contact-text">
+                <h4>Studio Location</h4>
+                <p>Artisans Guild, Block 4B, Chennai, India</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="studio-preview">
+          <!-- Dark minimalist static map placeholder to preserve modern look -->
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.8506721590457!2d80.24523317585097!3d13.045155987277645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5266459afb91f1%3A0xe5c3577d612d4a52!2sT.%20Nagar%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+
+      <div class="glass-panel inquiry-form-container">
+        <h3 class="form-title">Enquiry Form</h3>
+        <form id="inquiry-form" novalidate>
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label" for="form-name">Full Name</label>
+              <input type="text" id="form-name" class="form-input" placeholder="e.g. John Doe" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="form-email">Email Address</label>
+              <input type="email" id="form-email" class="form-input" placeholder="e.g. john@example.com" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="form-type">Enquiry Type</label>
+              <select id="form-type" class="form-input" style="appearance: none;">
+                <option value="custom">Custom 3D Print Request</option>
+                <option value="gallery">Gallery Piece Order</option>
+                <option value="consult">Sculpting & Design Consultation</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="form-material">Preferred Material</label>
+              <select id="form-material" class="form-input" style="appearance: none;">
+                <option value="pla">Premium Matte PLA</option>
+                <option value="abs">Tough Structural ABS</option>
+                <option value="resin">High-Detail Translucent Resin</option>
+                <option value="undecided">Not sure (Need recommendation)</option>
+              </select>
+            </div>
+
+            <div class="form-group form-full-width">
+              <label class="form-label" for="form-message">Describe Your Project</label>
+              <textarea id="form-message" class="form-input" placeholder="Please specify scale, dimensions, quantity, or any unique design requirements..." required></textarea>
+            </div>
+
+            <div class="form-group form-full-width">
+              <label class="form-label">Upload 3D Model File (STL, OBJ, 3MF)</label>
+              <div class="file-upload-area" id="file-dropzone">
+                <input type="file" id="form-file-input" style="display: none;" accept=".stl,.obj,.3mf,.zip">
+                <div class="file-upload-icon">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                </div>
+                <div class="file-upload-text">
+                  <span>Click to browse</span> or drag & drop files here
+                </div>
+                <div class="file-upload-tip">STL, OBJ, 3MF up to 25MB</div>
+              </div>
+              <div class="file-list" id="file-list">
+                <!-- Dynamically populated files -->
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%;" id="btn-submit-form">
+            <span>Send Enquiry Request</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- FOOTER --- -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a href="#home" class="logo">
+            <svg viewBox="0 0 32 32">
+              <path d="M16 2 L28 10 L28 22 L16 30 L4 22 L4 10 Z" fill="none" stroke="url(#logoGradient)" stroke-width="2" />
+              <path d="M16 8 L22 12 L22 20 L16 24 L10 20 L10 12 Z" fill="none" stroke="url(#logoGradient)" stroke-width="1.5" />
+              <circle cx="16" cy="16" r="3" fill="url(#logoGradient)" />
+            </svg>
+            Digital Kuyavan
+          </a>
+          <p>Fusing the meticulous artistry of traditional pottery with spatial, modern additive layer synthesis.</p>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#showcase">Art Showcase</a></li>
+            <li><a href="#customizer">3D Configurator</a></li>
+            <li><a href="#process">Our Slicing Process</a></li>
+            <li><a href="#contact">Contact & Enquiry</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-newsletter">
+          <h4>Stay Sculpted</h4>
+          <p style="color: var(--text-secondary); font-size: 0.9rem;">Join our newsletter to receive monthly drops of free high-res STL art models and prints.</p>
+          <div class="newsletter-box">
+            <input type="email" placeholder="Enter your email" aria-label="Newsletter email input">
+            <button class="btn btn-primary" style="padding: 10px 20px;">Join</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Digital Kuyavan. All rights reserved. Sculpted in Chennai, India.</p>
+        
+        <div class="social-links">
+          <a href="#" class="social-icon" aria-label="Instagram link"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+          <a href="#" class="social-icon" aria-label="Twitter/X link"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a>
+          <a href="#" class="social-icon" aria-label="Pinterest link"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 22c-.5-1.5-.1-3 .2-4.5.3-1.5 1.7-7.2 1.7-7.2s-.4-.9-.4-2.2c0-2.1 1.2-3.6 2.7-3.6 1.3 0 1.9 1 1.9 2.2 0 1.3-.8 3.2-1.2 5-.3 1.5.7 2.7 2.2 2.7 2.7 0 4.7-3.4 4.7-7.5 0-3.1-2.1-5.4-5.9-5.4-4.3 0-7 3.2-7 6.9 0 1.2.4 2.5 1 3.2.1.1.1.2 0 .5-.1.4-.3 1.3-.4 1.5-.1.2-.2.3-.5.2-1.9-.8-2.8-2.9-2.8-5.2 0-3.9 3.3-8.6 9.8-8.6 5.2 0 8.7 3.8 8.7 8 0 5.3-3 9.2-7.3 9.2-1.4 0-2.8-.8-3.3-1.7l-1 3.8c-.4 1.4-1.1 2.8-1.7 3.8z"></path></svg></a>
+        </div>
+
+        <button class="admin-toggle-btn" id="btn-admin-panel">Admin Panel</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- --- MODALS OVERLAYS --- -->
+  
+  <!-- Showcase Card Detail Modal -->
+  <div class="modal-overlay" id="project-modal">
+    <div class="modal-container glass-panel">
+      <button class="modal-close-btn" id="btn-close-project" aria-label="Close Project Modal">&times;</button>
+      <div class="modal-body">
+        <div class="project-modal-grid">
+          <div class="project-modal-gallery">
+            <div class="project-modal-main-img">
+              <img id="modal-main-image" src="assets/lamp.png" alt="Aether Lamp Large">
+            </div>
+            <div class="project-modal-thumbs" id="modal-thumbs">
+              <!-- Dynamically rendered thumbnail images -->
+            </div>
+          </div>
+          <div class="project-modal-info">
+            <span class="project-modal-tag" id="modal-project-tag">Decor & Art</span>
+            <h3 id="modal-project-title">Aether Voronoi Lamp</h3>
+            <p class="project-modal-desc" id="modal-project-desc">An intricate hollow-body lamp utilizing customized cellular patterns to scatter light in geometric grids.</p>
+            
+            <table class="specs-table">
+              <tbody>
+                <tr>
+                  <td class="spec-name">Material Used</td>
+                  <td class="spec-val" id="modal-spec-material">PLA Wood Fill</td>
+                </tr>
+                <tr>
+                  <td class="spec-name">Layer Height</td>
+                  <td class="spec-val" id="modal-spec-layer">120 Microns</td>
+                </tr>
+                <tr>
+                  <td class="spec-name">Printing Duration</td>
+                  <td class="spec-val" id="modal-spec-time">14h 30m</td>
+                </tr>
+                <tr>
+                  <td class="spec-name">Infill Density</td>
+                  <td class="spec-val" id="modal-spec-infill">15% Gyroid</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <button class="btn btn-primary" style="width:100%;" id="btn-order-piece">Request A Quote For This Piece</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Success Enquiry Modal -->
+  <div class="modal-overlay" id="success-modal">
+    <div class="modal-container glass-panel" style="max-width: 520px;">
+      <button class="modal-close-btn" id="btn-close-success" aria-label="Close Success Modal">&times;</button>
+      <div class="success-modal-content">
+        <div class="success-icon-wrap">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </div>
+        <h3>Enquiry Submitted!</h3>
+        <p>Your request has been saved securely. Our 3D printing artisans will review the files and specifications, and send a custom pricing/time quote to your inbox within 24 hours.</p>
+        <button class="btn btn-primary" id="btn-success-ok">Awesome, Thanks</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Admin Panel Dashboard Modal -->
+  <div class="modal-overlay" id="admin-modal">
+    <div class="modal-container glass-panel" style="max-width: 900px;">
+      <button class="modal-close-btn" id="btn-close-admin" aria-label="Close Admin Modal">&times;</button>
+      <div class="admin-modal-content">
+        <div class="admin-header">
+          <h3>Inquiry Manager</h3>
+          <button class="btn btn-outline" style="padding: 6px 14px; font-size: 0.8rem;" id="btn-clear-inquiries">Clear All</button>
+        </div>
+
+        <div class="inquiries-table-container">
+          <table class="inquiries-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Name / Email</th>
+                <th>Type</th>
+                <th>Material</th>
+                <th>Message / Details</th>
+                <th>Attachment</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="inquiries-list-body">
+              <!-- Dynamically populated inquiries -->
+            </tbody>
+          </table>
+          <div id="admin-empty-state" class="empty-state">
+            No inquiries recorded yet. Form submissions will appear here in real time.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -133,7 +133,7 @@ function initHeaderScroll() {
 function initMobileMenu() {
   const menuToggle = document.getElementById("menu-toggle");
   const navLinks = document.getElementById("nav-links");
-  
+
   menuToggle.addEventListener("click", () => {
     navLinks.classList.toggle("active");
   });
@@ -150,10 +150,10 @@ function initMobileMenu() {
 function initPortfolio() {
   const galleryGrid = document.getElementById("gallery-grid");
   const filterButtons = document.querySelectorAll(".filter-btn");
-  
+
   const projectModal = document.getElementById("project-modal");
   const btnCloseProject = document.getElementById("btn-close-project");
-  
+
   const modalMainImage = document.getElementById("modal-main-image");
   const modalThumbs = document.getElementById("modal-thumbs");
   const modalProjectTag = document.getElementById("modal-project-tag");
@@ -171,10 +171,10 @@ function initPortfolio() {
       // Toggle active classes
       filterButtons.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
-      
+
       const filterValue = btn.getAttribute("data-filter");
       const cards = galleryGrid.querySelectorAll(".gallery-card");
-      
+
       cards.forEach(card => {
         const cardCategory = card.getAttribute("data-category");
         if (filterValue === "all" || cardCategory === filterValue) {
@@ -193,10 +193,10 @@ function initPortfolio() {
   galleryGrid.addEventListener("click", (e) => {
     const card = e.target.closest(".gallery-card");
     if (!card) return;
-    
+
     const itemId = parseInt(card.getAttribute("data-id"));
     const itemData = SHOWCASE_ITEMS.find(item => item.id === itemId);
-    
+
     if (itemData) {
       openProjectModal(itemData);
     }
@@ -207,24 +207,24 @@ function initPortfolio() {
     modalMainImage.alt = item.title;
     modalProjectTitle.textContent = item.title;
     modalProjectDesc.textContent = item.description;
-    
+
     // Tag formatting
     const tagNames = { decor: "Decor & Art", miniature: "Miniatures", functional: "Functional" };
     modalProjectTag.textContent = tagNames[item.category] || item.category;
-    
+
     // Spec table filling
     modalSpecMaterial.textContent = item.material;
     modalSpecLayer.textContent = item.layerHeight;
     modalSpecTime.textContent = item.duration;
     modalSpecInfill.textContent = item.infill;
-    
+
     // Spec table details - empty original and render extra specs
     const existingTableBody = projectModal.querySelector(".specs-table tbody");
     // Clear custom rows (rows beyond first 4)
     while (existingTableBody.rows.length > 4) {
       existingTableBody.deleteRow(4);
     }
-    
+
     // Add custom spec rows from db
     Object.entries(item.specs).forEach(([key, val]) => {
       const row = document.createElement("tr");
@@ -251,10 +251,10 @@ function initPortfolio() {
     btnOrderPiece.onclick = () => {
       const typeSelect = document.getElementById("form-type");
       const messageText = document.getElementById("form-message");
-      
+
       typeSelect.value = "gallery";
       messageText.value = `I am interested in acquiring a custom production of the "${item.title}" from your showcase.\n\nSpecs requested:\n- Material: ${item.material}\n- Layer resolution: ${item.layerHeight}`;
-      
+
       // Close modal and scroll
       projectModal.classList.remove("active");
       document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
@@ -284,11 +284,11 @@ function initConfigurator() {
   const scaleValue = document.getElementById("scale-value");
   const inputInfill = document.getElementById("input-infill");
   const infillValue = document.getElementById("infill-value");
-  
+
   const estTime = document.getElementById("est-time");
   const estWeight = document.getElementById("est-weight");
   const estCost = document.getElementById("est-cost");
-  
+
   const virtualModel = document.getElementById("virtual-model");
   const btnInquireCustom = document.getElementById("btn-inquire-custom");
 
@@ -319,7 +319,7 @@ function initConfigurator() {
       colorSwatches.forEach(s => s.classList.remove("active"));
       swatch.classList.add("active");
       currentConfig.color = swatch.getAttribute("data-color");
-      
+
       // Update visualizer CSS variables
       document.documentElement.style.setProperty("--model-color", currentConfig.color);
     });
@@ -329,7 +329,7 @@ function initConfigurator() {
   inputScale.addEventListener("input", (e) => {
     currentConfig.scale = parseInt(e.target.value);
     scaleValue.textContent = `${currentConfig.scale}%`;
-    
+
     // Scale representation (range 50% to 200% maps to 0.5 to 1.7 scale transform)
     const scaleFactor = (currentConfig.scale / 100).toFixed(2);
     document.documentElement.style.setProperty("--model-scale", scaleFactor);
@@ -351,11 +351,11 @@ function initConfigurator() {
 
     const mModel = CONFIG_MATH.models[currentConfig.model].name;
     const mMat = CONFIG_MATH.materials[currentConfig.material].name;
-    
+
     // Map material config key to select value
     typeSelect.value = "custom";
     materialSelect.value = currentConfig.material;
-    
+
     // Generate detail string
     messageText.value = `I want to request a custom print quote for the following simulated configuration:
 - Model Shape: ${mModel}
@@ -375,9 +375,9 @@ Live estimates calculated:
   function updateModelGeometry() {
     virtualModel.className = `virtual-model model-${currentConfig.model}`;
     virtualModel.innerHTML = "";
-    
+
     const geom = CONFIG_MATH.models[currentConfig.model];
-    
+
     if (currentConfig.model === "vase") {
       // Build layers for vase
       for (let i = 1; i <= geom.layerCount; i++) {
@@ -409,25 +409,25 @@ Live estimates calculated:
   function calculateEstimates() {
     const model = CONFIG_MATH.models[currentConfig.model];
     const mat = CONFIG_MATH.materials[currentConfig.material];
-    
+
     // Scale modifier math: weight is volume (cubic), time is area (quadratic)
     const scaleFactor3D = Math.pow(currentConfig.scale / 100, 3);
     const scaleFactor2D = Math.pow(currentConfig.scale / 100, 1.8);
-    
+
     // Infill modifier math
     const infillRatio = currentConfig.infill / 100;
     const infillWeightCoeff = 0.2 + (infillRatio * 0.8); // 20% weight at 0% infill (shell only), up to 100%
     const infillTimeCoeff = 0.5 + (infillRatio * 0.5);   // infill speeds time slightly at low rates
-    
+
     // Weight: modelBase * scaleModifier * materialDensity * infillModifier
     const finalWeight = Math.round(model.baseWeight * scaleFactor3D * mat.density * infillWeightCoeff);
-    
+
     // Time: modelBase * scaleModifier * materialTimeMultiplier * infillModifier
     const timeHours = (model.baseTime * scaleFactor2D * mat.timeMultiplier * infillTimeCoeff).toFixed(1);
-    
+
     // Cost: BaseSetupCost + MaterialCost(Weight * costPerGram)
     const finalCost = (model.baseCost + (finalWeight * mat.costPerGram)).toFixed(2);
-    
+
     // Update labels
     estWeight.textContent = `${finalWeight} g`;
     estTime.textContent = `${timeHours} hrs`;
@@ -474,7 +474,7 @@ function initFileUploader() {
 
   function handleFiles(files) {
     const filesArray = Array.from(files);
-    
+
     filesArray.forEach(file => {
       // Filter extensions
       const ext = file.name.split('.').pop().toLowerCase();
@@ -502,18 +502,21 @@ function initFileUploader() {
         <span>📁 ${file.name} (${sizeMB} MB)</span>
         <button type="button" class="file-remove" data-index="${index}">&times;</button>
       `;
-      
+
       fileItem.querySelector(".file-remove").addEventListener("click", () => {
         uploadedFiles.splice(index, 1);
         renderFileList();
       });
-      
+
       fileList.appendChild(fileItem);
     });
   }
 }
 
 // --- FORM HANDLING & SUBMISSION ---
+// Replace 'YOUR_FORM_ID' with your actual Formspree form ID to receive email notifications
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xojgaroa";
+
 function initFormHandler() {
   const form = document.getElementById("inquiry-form");
   const successModal = document.getElementById("success-modal");
@@ -522,25 +525,24 @@ function initFormHandler() {
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-    
+
     // Validation
     const name = document.getElementById("form-name").value.trim();
     const email = document.getElementById("form-email").value.trim();
     const type = document.getElementById("form-type").value;
     const material = document.getElementById("form-material").value;
     const message = document.getElementById("form-message").value.trim();
-    
+
     if (!name || !email || !message) {
       alert("Please fill out Name, Email, and Project Description.");
       return;
     }
-    
+
     if (!validateEmail(email)) {
       alert("Please enter a valid email address.");
       return;
     }
 
-    // Save Inquiry
     const fileNames = uploadedFiles.map(f => f.name).join(", ") || "None";
     const newInquiry = {
       id: Date.now(),
@@ -553,15 +555,70 @@ function initFormHandler() {
       attachments: fileNames
     };
 
-    saveInquiry(newInquiry);
+    // If Formspree is not configured, fallback to local storage only
+    if (FORMSPREE_ENDPOINT.includes("YOUR_FORM_ID")) {
+      console.warn("Formspree ID is not configured. Saving inquiry locally in Admin Panel.");
+      saveInquiry(newInquiry);
+      successModal.classList.add("active");
+      form.reset();
+      uploadedFiles = [];
+      document.getElementById("file-list").innerHTML = "";
+      return;
+    }
 
-    // Show Success Modal
-    successModal.classList.add("active");
+    // Submit via AJAX to Formspree
+    const btnSubmit = document.getElementById("btn-submit-form");
+    const originalBtnText = btnSubmit.innerHTML;
 
-    // Reset Form
-    form.reset();
-    uploadedFiles = [];
-    document.getElementById("file-list").innerHTML = "";
+    // Show sending loading state
+    btnSubmit.disabled = true;
+    btnSubmit.innerHTML = `<span>Sending Enquiry...</span>`;
+
+    const formData = new FormData(form);
+
+    // Formspree free plan does not support direct file attachments.
+    // Workaround: Append file list to the text description field so you receive filenames in the email body.
+    let fullMessage = message;
+    if (uploadedFiles.length > 0) {
+      fullMessage += `\n\n[Uploaded Files]: ` + fileNames;
+    }
+    formData.set("project_description", fullMessage);
+
+    fetch(FORMSPREE_ENDPOINT, {
+      method: "POST",
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+      .then(response => {
+        if (response.ok) {
+          // Save to local storage for Admin Panel record
+          saveInquiry(newInquiry);
+          // Show Success Modal
+          successModal.classList.add("active");
+          // Reset Form
+          form.reset();
+          uploadedFiles = [];
+          document.getElementById("file-list").innerHTML = "";
+        } else {
+          return response.json().then(data => {
+            if (data && data.errors) {
+              alert("Formspree Error: " + data.errors.map(err => err.message).join(", "));
+            } else {
+              alert("Oops! There was a problem submitting your form.");
+            }
+          });
+        }
+      })
+      .catch(error => {
+        console.error("Submission error:", error);
+        alert("Oops! There was a problem submitting your form. Please check your network connection.");
+      })
+      .finally(() => {
+        btnSubmit.disabled = false;
+        btnSubmit.innerHTML = originalBtnText;
+      });
   });
 
   // Modal Closures
@@ -616,14 +673,14 @@ function initAdminPanel() {
   function renderInquiries() {
     listBody.innerHTML = "";
     const list = JSON.parse(localStorage.getItem("dk_inquiries")) || [];
-    
+
     if (list.length === 0) {
       emptyState.style.display = "block";
       return;
     }
-    
+
     emptyState.style.display = "none";
-    
+
     const typeBadges = {
       custom: '<span class="inquiry-badge badge-custom">Custom Print</span>',
       gallery: '<span class="inquiry-badge badge-gallery">Gallery Order</span>',
@@ -650,7 +707,7 @@ function initAdminPanel() {
           <button class="admin-delete-btn" data-id="${inq.id}" title="Delete Inquiry">&times;</button>
         </td>
       `;
-      
+
       row.querySelector(".admin-delete-btn").addEventListener("click", (e) => {
         const targetId = parseInt(e.target.getAttribute("data-id"));
         deleteInquiry(targetId);

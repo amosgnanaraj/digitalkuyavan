@@ -440,17 +440,17 @@
           <div class="form-grid">
             <div class="form-group">
               <label class="form-label" for="form-name">Full Name</label>
-              <input type="text" id="form-name" class="form-input" placeholder="e.g. John Doe" required>
+              <input type="text" id="form-name" name="name" class="form-input" placeholder="e.g. John Doe" required>
             </div>
 
             <div class="form-group">
               <label class="form-label" for="form-email">Email Address</label>
-              <input type="email" id="form-email" class="form-input" placeholder="e.g. john@example.com" required>
+              <input type="email" id="form-email" name="email" class="form-input" placeholder="e.g. john@example.com" required>
             </div>
 
             <div class="form-group">
               <label class="form-label" for="form-type">Enquiry Type</label>
-              <select id="form-type" class="form-input" style="appearance: none;">
+              <select id="form-type" name="inquiry_type" class="form-input" style="appearance: none;">
                 <option value="custom">Custom 3D Print Request</option>
                 <option value="gallery">Gallery Piece Order</option>
                 <option value="consult">Sculpting & Design Consultation</option>
@@ -459,7 +459,7 @@
 
             <div class="form-group">
               <label class="form-label" for="form-material">Preferred Material</label>
-              <select id="form-material" class="form-input" style="appearance: none;">
+              <select id="form-material" name="preferred_material" class="form-input" style="appearance: none;">
                 <option value="pla">Premium Matte PLA</option>
                 <option value="abs">Tough Structural ABS</option>
                 <option value="resin">High-Detail Translucent Resin</option>
@@ -469,7 +469,7 @@
 
             <div class="form-group form-full-width">
               <label class="form-label" for="form-message">Describe Your Project</label>
-              <textarea id="form-message" class="form-input" placeholder="Please specify scale, dimensions, quantity, or any unique design requirements..." required></textarea>
+              <textarea id="form-message" name="project_description" class="form-input" placeholder="Please specify scale, dimensions, quantity, or any unique design requirements..." required></textarea>
             </div>
 
             <div class="form-group form-full-width">
